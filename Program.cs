@@ -17,6 +17,127 @@ Console.WriteLine("_____________________________________________________________
 Console.WriteLine("");
 Console.WriteLine($"{"Type",-10} {"Brand",-10} {"Model",-15} {"Purchase Date",-15} {"Status",-25}");
 Console.WriteLine("_______________________________________________________________");
+Console.WriteLine("");
+
+
+Console.Write("Do you want to add a new asset? (y/n): ");
+Console.WriteLine("");
+
+string answer = Console.ReadLine().Trim().ToLower();
+
+if (answer == "y")
+{
+
+    string brand;
+    while (true)
+{
+        Console.Write("Enter Brand: ");
+        brand = Console.ReadLine().Trim();
+
+        if (!string.IsNullOrWhiteSpace(brand))
+            break;
+
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("Brand cannot be empty.");
+    Console.ResetColor();
+}
+
+
+string model;
+while (true)
+{
+    Console.Write("Enter Model: ");
+    model = Console.ReadLine().Trim();
+
+    if (!string.IsNullOrWhiteSpace(model))
+        break;
+
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("Model cannot be empty.");
+    Console.ResetColor();
+}
+
+
+    DateTime purchaseDate;
+    while (true)
+    {
+        Console.Write("Enter Purchase Date (yyyy-mm-dd): ");
+        Console.WriteLine("");
+
+        if (DateTime.TryParse(Console.ReadLine(), out purchaseDate))
+            break;
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Invalid date. Try again.");
+        Console.WriteLine("");
+
+        Console.ResetColor();
+    }
+
+    decimal priceUSD;
+    while (true)
+    {
+        Console.Write("Enter Price USD: ");
+        if (decimal.TryParse(Console.ReadLine(), out priceUSD))
+            break;
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Invalid price. Try again.");
+        Console.WriteLine("");
+        Console.ResetColor();
+    }
+
+    decimal priceLocal;
+    while (true)
+    {
+        Console.Write("Enter Price Local: ");
+        if (decimal.TryParse(Console.ReadLine(), out priceLocal))
+            break;
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Invalid price. Try again.");
+        Console.WriteLine("");
+        Console.ResetColor();
+    }
+
+    string office;
+    while (true)
+    {
+        Console.Write("Enter Office (Sweden/USA/Turkey): ");
+        office = Console.ReadLine().Trim();
+
+    if (office.Equals("Sweden", StringComparison.OrdinalIgnoreCase) ||
+        office.Equals("USA", StringComparison.OrdinalIgnoreCase) ||
+        office.Equals("Turkey", StringComparison.OrdinalIgnoreCase))
+        break;
+
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("Invalid office. Allowed: Sweden, USA, Turkey.");
+    Console.ResetColor();
+}
+
+    string type;
+    
+    while (true)
+    {
+        Console.Write("Enter Type (Laptop/Phone) for this new product: ");
+        type = Console.ReadLine().Trim().ToLower();
+
+        if (type == "laptop" || type == "phone")
+            break;
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Invalid type. Must be Laptop or Phone.");
+        Console.WriteLine("");
+        Console.ResetColor();
+    }
+
+    // Create the correct object
+    if (type == "laptop")
+        assets.Add(new Computer(brand, model, purchaseDate, priceUSD, priceLocal, office));
+    else
+        assets.Add(new MobilePhone(brand, model, purchaseDate, priceUSD, priceLocal, office));
+}
 
 foreach (var a in assets)
 {
