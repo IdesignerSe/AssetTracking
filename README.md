@@ -1,34 +1,58 @@
-# Asset Tracking System – Level 1
+# Asset Tracking System 
 
-A C# console application that tracks company assets such as laptops and mobile phones.  
-This project is built in stages (Level 1–5) following OOP principles and real‑world software structure.
+📝 How to Run it:
+1.- Clone the repository
 
----
+2.- Open in Visual Studio or VS Code 
 
-## 🚀 Features (Level 1)
-- Create asset objects (Computers & Mobile Phones)
-- Store assets in a `List<Asset>`
-- Display asset information in a formatted console table
-- Organized folder structure using `Models/`
+3.- Build the project
+    At the terminal: dotnet build
 
----
+4.- Run the console application
+    dotnet run
 
-## 🧠 What I Learned
-- How to create classes and constructors in C#
-- How to use inheritance for shared properties
-- How to organize code using folders and namespaces
-- How to store objects in collections (`List<T>`)
-- How to print formatted output in the console
+If assets.json does not exist, the program creates it automatically.
 
 ---
 
 ## 📂 Project Structure
+
 AssetTracking/
-│── Models/
-│     ├── Asset.cs
-│     ├── Computer.cs
-│     └── MobilePhone.cs
 │
-│── Program.cs
-│── AssetTracking.csproj
-│── README.md
+├── Models/
+│   ├── Asset.cs
+│   ├── Computer.cs
+│   ├── MobilePhone.cs
+│   └── Tablet.cs
+│
+├── FileManager.cs
+├── Program.cs
+└── README.md
+
+🖥️ Example Console Output 
+
+Loading assets from file...
+5 assets loaded successfully.
+
+=============================
+COMPANY ASSET TRACKING SYSTEM
+=============================
+
+1. Add Asset
+2. View Assets
+3. Search Asset
+4. Remove Asset
+5. Exit
+
+📄 Exported Report Example
+
+ASSET REPORT
+====================================
+ID: 1
+Type: Computer
+Brand: Apple
+Model: MacBook Pro
+Office: Sweden
+Price USD: 1500
+Purchase Date: 2022-08-10
+------------------------------------

@@ -1,8 +1,8 @@
 namespace AssetTracking.Models
 {
-    public class MobilePhone : Asset
+    public class Tablet : Asset
     {
-        public MobilePhone(
+        public Tablet(
             string brand,
             string model,
             DateTime purchaseDate,
@@ -16,7 +16,7 @@ namespace AssetTracking.Models
 
         public override string GetAssetType()
         {
-            return "Mobile Phone";
+            return "Tablet";
         }
     }
 }
