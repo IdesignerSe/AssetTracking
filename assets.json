@@ -1,0 +1,62 @@
+[
+  {
+    "type": "computer",
+    "Id": 1,
+    "Brand": "Apple",
+    "Model": "MacBook Pro",
+    "PurchaseDate": "2022-08-10T00:00:00",
+    "PriceUSD": 1500,
+    "PriceLocal": 15000,
+    "Office": "Sweden"
+  },
+  {
+    "type": "computer",
+    "Id": 2,
+    "Brand": "Lenovo",
+    "Model": "ThinkPad X1",
+    "PurchaseDate": "2024-04-01T00:00:00",
+    "PriceUSD": 1200,
+    "PriceLocal": 13000,
+    "Office": "USA"
+  },
+  {
+    "type": "mobile",
+    "Id": 3,
+    "Brand": "Nokia",
+    "Model": "XR20",
+    "PurchaseDate": "2022-09-01T00:00:00",
+    "PriceUSD": 900,
+    "PriceLocal": 9500,
+    "Office": "Sweden"
+  },
+  {
+    "type": "mobile",
+    "Id": 4,
+    "Brand": "Samsung",
+    "Model": "Galaxy S23",
+    "PurchaseDate": "2025-01-10T00:00:00",
+    "PriceUSD": 900,
+    "PriceLocal": 9500,
+    "Office": "Sweden"
+  },
+  {
+    "type": "mobile",
+    "Id": 5,
+    "Brand": "Apple",
+    "Model": "iPhone 15",
+    "PurchaseDate": "2024-12-05T00:00:00",
+    "PriceUSD": 1100,
+    "PriceLocal": 12000,
+    "Office": "USA"
+  },
+  {
+    "type": "tablet",
+    "Id": 6,
+    "Brand": "Kindle",
+    "Model": "OldFashioned",
+    "PurchaseDate": "2009-01-01T00:00:00",
+    "PriceUSD": 200,
+    "PriceLocal": 3000,
+    "Office": "Sweden"
+  }
+]
