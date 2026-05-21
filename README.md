@@ -1,6 +1,6 @@
 # Asset Tracking System 
 
-📝 How to Run it:
+## 📝 How to Run it:
 1.- Clone the repository
 
 2.- Open in Visual Studio or VS Code 
@@ -12,8 +12,6 @@
     dotnet run
 
 If assets.json does not exist, the program creates it automatically.
-
----
 
 ## 📂 Project Structure
 
@@ -29,7 +27,9 @@ AssetTracking/
 ├── Program.cs
 └── README.md
 
-🖥️ Example Console Output 
+------------------------------------
+
+## 🖥️ Example Console Output 
 
 Loading assets from file...
 5 assets loaded successfully.
@@ -44,7 +44,7 @@ COMPANY ASSET TRACKING SYSTEM
 4. Remove Asset
 5. Exit
 
-📄 Exported Report Example
+## 📄 Exported Report Example
 
 ASSET REPORT
 ====================================
@@ -55,4 +55,3 @@ Model: MacBook Pro
 Office: Sweden
 Price USD: 1500
 Purchase Date: 2022-08-10
-------------------------------------
