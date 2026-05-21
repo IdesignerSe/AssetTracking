@@ -1,5 +1,4 @@
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using AssetTracking.Models;
 
 public static class FileManager
@@ -9,29 +8,7 @@ public static class FileManager
     private static JsonSerializerOptions options = new JsonSerializerOptions
     {
         WriteIndented = true,
-        PropertyNameCaseInsensitive = true,
-        TypeInfoResolver = new DefaultJsonTypeInfoResolver
-        {
-            Modifiers =
-            {
-                ti =>
-                {
-                    if (ti.Type == typeof(Asset))
-                    {
-                        ti.PolymorphismOptions = new JsonPolymorphismOptions
-                        {
-                            TypeDiscriminatorPropertyName = "type",
-                            IgnoreUnrecognizedTypeDiscriminators = true,
-                            UnknownDerivedTypeHandling = JsonUnknownDerivedTypeHandling.FallBackToBaseType
-                        };
-
-                        ti.PolymorphismOptions.DerivedTypes.Add(new JsonDerivedType(typeof(Computer), "computer"));
-                        ti.PolymorphismOptions.DerivedTypes.Add(new JsonDerivedType(typeof(MobilePhone), "mobile"));
-                        ti.PolymorphismOptions.DerivedTypes.Add(new JsonDerivedType(typeof(Tablet), "tablet"));
-                    }
-                }
-            }
-        }
+        PropertyNameCaseInsensitive = true
     };
 
     public static List<Asset> LoadAssets()
@@ -41,9 +18,10 @@ public static class FileManager
 
         string json = File.ReadAllText(filePath);
 
-        var assets = JsonSerializer.Deserialize<List<Asset>>(json, options) ?? new List<Asset>();
+        var assets = JsonSerializer.Deserialize<List<Asset>>(json, options) 
+                     ?? new List<Asset>();
 
-        // Update next ID so no duplicates occur
+        // Prevent duplicate IDs
         if (assets.Count > 0)
         {
             int maxId = assets.Max(a => a.Id);
@@ -64,7 +42,6 @@ public static class FileManager
         string reportPath = "asset_report.txt";
 
         using StreamWriter sw = new StreamWriter(reportPath);
-
         sw.WriteLine("ASSET REPORT");
         sw.WriteLine("====================================");
 
