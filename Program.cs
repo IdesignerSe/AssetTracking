@@ -9,18 +9,13 @@ assets.Add(new MobilePhone("Samsung", "Galaxy S23", new DateTime(2025, 1, 10), 9
 assets.Add(new MobilePhone("Apple", "iPhone 15", new DateTime(2024, 12, 5), 1100, 12000, "USA"));
 
 
-Console.WriteLine("");
-Console.WriteLine("");
-Console.WriteLine("ASSET LIST\n");
-Console.WriteLine("_______________________________________________________________");
-Console.WriteLine("");
-Console.WriteLine($"{"Type",-10} {"Brand",-10} {"Model",-15} {"Purchase Date",-15} {"Status",-25}");
-Console.WriteLine("_______________________________________________________________");
-Console.WriteLine("");
-
 while (true)
 {
-    Console.Write("Do you want to add a new asset? (y/n): ");
+    Console.WriteLine();
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine("DO YOU WANT TO ADD A NEW ASSET? (Y/N): ");
+    Console.ResetColor();
+
     string answer = Console.ReadLine().Trim().ToLower();
 
     if (answer != "y")
@@ -144,6 +139,15 @@ while (true)
 }
 assets = assets.OrderBy(a => a.PurchaseDate).ToList();
 
+Console.WriteLine("");
+Console.WriteLine("");
+Console.WriteLine("ASSET LIST\n");
+Console.WriteLine("______________________________________________________________________________________");
+Console.WriteLine("");
+Console.WriteLine($"{"Type",-10} {"Brand",-10} {"Model",-15} {"Office",-10} {"Price USD",-12} {"Purchase Date",-15} {"Status",-10}");
+Console.WriteLine("______________________________________________________________________________________");
+Console.WriteLine("");
+
 foreach (var a in assets)
 {
     int age = DateTime.Now.Year - a.PurchaseDate.Year;
@@ -166,7 +170,7 @@ foreach (var a in assets)
         status = "GREEN";
     }
 
-    Console.WriteLine($"{a.AssetType,-10} {a.Brand,-10} {a.Model,-15} {a.PurchaseDate, -15:yyyy-MM-dd} {status,-25}");
+    Console.WriteLine($"{a.AssetType,-10} {a.Brand,-10} {a.Model,-15} {a.Office,-10} {a.PriceUSD,-12:C} {a.PurchaseDate, -15:yyyy-MM-dd} {status,-10}");
     Console.ResetColor();
     
 }
@@ -185,5 +189,6 @@ Console.ResetColor();
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine("GREEN  = Less than 2 years");
 Console.ResetColor();
+Console.WriteLine();
 
 
