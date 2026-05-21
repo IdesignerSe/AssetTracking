@@ -1,6 +1,9 @@
+
+
 # Asset Tracking System 
 
-📝 How to Run it:
+## 📝 How to Run it:
+
 1.- Clone the repository
 
 2.- Open in Visual Studio or VS Code 
@@ -27,7 +30,7 @@ AssetTracking/
 ├── Program.cs
 └── README.md
 
-🖥️ Example Console Output 
+## 🖥️ Example Console Output 
 
 Loading assets from file...
 5 assets loaded successfully.
